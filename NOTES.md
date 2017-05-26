@@ -1,7 +1,9 @@
-Package Modifications
+# Sam's Notes
+
+## New NPM packages
 * npm-font-open-sans - to use open-sans font
 
 
-Assets
-  Images
-	  * added Curse header image
+## New Assets
+* Images
+  * added Curse header image
