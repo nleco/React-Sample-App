@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+
 export interface GameListProps extends React.Props<GameList> {
     // Define any props taken by List itself.
 }
@@ -15,7 +16,7 @@ export interface ConnectedDispatch {
 type CombinedTypes = GameListProps & ConnectedProps & ConnectedDispatch;
 
 export class GameList extends React.Component<CombinedTypes, void> {
-    render() {
+    render() { 
         return (
             <div className='GameList--root'>
                 <img src="/assets/images/flame.png" />
@@ -24,4 +25,4 @@ export class GameList extends React.Component<CombinedTypes, void> {
             </div>
         );
     }
-} 
+}

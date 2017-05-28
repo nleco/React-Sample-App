@@ -6,13 +6,14 @@ import { store } from '../globals';
 import { App } from './App';
 import { GameListContainer } from './games/GameListContainer';
 
-export class Root extends React.Component<void, void> {
+export class Root extends React.Component<{}, void> {
     render() {
         return (
             <Provider store={store}>
                 <Router history={browserHistory}>
                     <Route path='/' component={App}>
                         <IndexRoute component={GameListContainer} />
+                        {/*<Route path='/view:gid' component={GameViewContainer} />*/ }
                     </Route>
                 </Router>
             </Provider>

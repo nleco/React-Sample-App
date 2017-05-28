@@ -5,5 +5,5 @@
 
 
 ## New Assets
-* Images
-  * added Curse header image
+### Images
+* added Curse header image

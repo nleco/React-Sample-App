@@ -7,7 +7,7 @@ import { GlobalState } from '../../state/GlobalState';
 
 function mapStateToProps(state: GlobalState, props: GameListProps): ConnectedProps {
     return {
-
+        games : state.games
     }
 };
 

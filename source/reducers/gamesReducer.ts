@@ -7,18 +7,21 @@ import {
 type Actions = FetchGamesStarted | FetchGamesSucceeded | FetchGamesFailed;
 
 const initialState: GamesState = {
-    games: [],
+    games: []
 };
 
 export function gamesReducer(state: GamesState = initialState, action: Actions) {
     switch (action.type) {
         case FETCH_GAMES_STARTED:
+            console.log('reducer: fetch started');
             // Handle action
             break;
         case FETCH_GAMES_FAILED:
+            console.log('reducer: fetch failed');
             // Handle action
             break;
         case FETCH_GAMES_SUCCEEDED:
+            console.log('reducer: fetch succeeded');
             // Handle action
             break;
     }

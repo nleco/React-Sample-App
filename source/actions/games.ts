@@ -39,5 +39,6 @@ export function fetchGames() {
         dispatch(fetchGamesStarted());
 
         // Implement remainder of thunk
+        console.log('games.ts:fetchGames()');
     };
 }
