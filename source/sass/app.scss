@@ -5,6 +5,19 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+a:hover {
+  color: #888;
+}
+
+a:active {
+  color: #000;
+}
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
 // Material design icons

@@ -22,9 +22,7 @@ export default class GamesTable extends React.Component<GameTableProps, void> {
                 </Link>
             
                 <div className="GameTable--game--info">
-                    <p className="GameTable--game--info--title">
-                        <Link to={'/view/' + game.ID}>{game.Name}</Link>
-                    </p>
+                    <Link to={'/view/' + game.ID} className="GameTable--game--info--title">{game.Name}</Link>
             
                     <ul className="GameTable--game--info--supports">
                         <li className="GameTable--game--info--supports--item">

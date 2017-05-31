@@ -25,6 +25,12 @@
       margin-left: 75px;
       text-align: left;
       
+      &--title {
+        font-weight: bold;
+        text-decoration: none;
+        color: #222;
+      }
+      
       &--supports {
         list-style-type: none;
         margin: 0;
