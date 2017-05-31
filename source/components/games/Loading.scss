@@ -1,0 +1,54 @@
+
+.Loading {
+   &--text {
+    
+   }
+  
+   &--loader {
+      margin: 40px auto;
+      height: 50px;
+      text-align: center;
+      
+      &--mover {
+         width: 5px;
+         height: 50px;
+         margin: 0 5px;
+         background-color: black;
+         display: inline-block;
+         
+         -webkit-animation: moverLoader 1.5s infinite ease-in-out;
+         animation: moverLoader 1.5s infinite ease-in-out;
+         
+         &.mod-2 {
+           -webkit-animation-delay: -1.4s;
+           animation-delay: -1.4s;
+         }
+         
+         &.mod-3 {
+           -webkit-animation-delay: -1.3s;
+           animation-delay: -1.3s;
+         }
+      }
+   }
+}
+
+// This could be a mixin
+@-webkit-keyframes moverLoader {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(.5);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes moverLoader {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
