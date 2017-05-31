@@ -3,7 +3,9 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import { store } from '../globals';
+
 import { App } from './App';
+
 import { GameListContainer } from './games/GameListContainer';
 import { GameViewContainer } from './games/GameViewContainer';
 

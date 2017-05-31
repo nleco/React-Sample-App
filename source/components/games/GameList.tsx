@@ -53,7 +53,6 @@ export class GameList extends React.Component<CombinedTypes, void> {
                 
         return (
             <div className='GameList--root'>
-                <h1>Curse Games</h1>
                 {body}
             </div>
         );

@@ -1,22 +1,33 @@
-// Fonts
+// start off with a 'normalize' css
+@import './normalize';
 
+p {
+  margin: 0;
+}
+
+// Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+// Material design icons
+@import url('https://cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css');
 
 // Global styles
-
 body {
     font-family: 'Open Sans';
     font-size: 14px;
     background: #efefef;
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2 {
     font-weight: normal;
 }
 
-// Component imports
+// Component/View imports
+@import '../components/games/Header';
 
-@import '../components/games/GameList';
+@import '../components/games/GamesTable';
+
 @import '../components/games/Loading';
-
+@import '../components/games/GameList';
 @import '../components/games/GameView';

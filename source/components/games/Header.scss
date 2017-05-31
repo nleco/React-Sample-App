@@ -1,0 +1,13 @@
+.Header {
+  background-color: #222;
+  padding: 10px 10px;
+  
+  &--text {
+    color: #fff;
+    font-size: .8rem;
+    display: inline-block;
+    margin: 0 0 0 20px;
+    position: relative;
+    top: -17px;
+  }
+}

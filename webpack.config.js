@@ -19,7 +19,7 @@ module.exports = {
     module: {
         loaders: [
             { loader: 'json-loader', test: /\.json$/ },
-            { loader: 'ts-loader', test: /\.tsx?$/, exclude: /node_modules/ },
+            { loader: 'ts-loader', test: /\.tsx?$/, exclude: /node_modules/ }
         ]
     },
     plugins: [

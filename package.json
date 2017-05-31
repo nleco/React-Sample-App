@@ -51,11 +51,12 @@
     "gulp-sourcemaps": "^1.9.1",
     "gulp-util": "^3.0.7",
     "jest": "^17.0.3",
+    "node-sass": "^4.5.3",
     "react-test-renderer": "^15.4.0",
     "ts-jest": "^17.0.0",
     "ts-loader": "^1.2.2",
     "tslint": "^4.0.1",
     "typescript": "^2.0.10",
-    "webpack": "^1.13.3"
+    "webpack": "^1.15.0"
   }
 }
