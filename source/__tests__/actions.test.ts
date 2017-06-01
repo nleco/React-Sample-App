@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { Game } from "../models/Game";
 
 import {
     FETCH_GAMES_STARTED, FETCH_GAMES_SUCCEEDED, FETCH_GAMES_FAILED, UPDATE_KEYWORD,
@@ -14,16 +13,16 @@ test('fetchGamesStarted() returns the proper action.', () => {
 });
 
 test('fetchGamesSucceeded() returns the proper action.', () => {
-    const timestamp = 123456789;
-    const games = [{
-        ID: 7;
-        Name: 'My Awesome Game';
-        SupportsAddons: true;
-        SupportsVoice: false;
-        Order: 1;
-        Slug: 'MAG';
-        GameFiles: [];
-        CategorySections: [];
+    const timestamp : number = 123456789;
+    const games : Game[] = [{
+        ID: 7,
+        Name: 'My Awesome Game',
+        SupportsAddons: true,
+        SupportsVoice: false,
+        Order: 1,
+        Slug: 'MAG',
+        GameFiles: <Game[]>[],
+        CategorySections: []
     }]
     const action = {
         type : FETCH_GAMES_SUCCEEDED,

@@ -20,11 +20,11 @@ export default class GamesTable extends React.Component<any, any> {
         this.filterGameList = this.filterGameList.bind(this);        
     }
     
-    componentDidMount() {
-        this.setState ({
-            games : this.filterGameList()
-        });
-    }
+    // componentDidMount() {
+    //     this.setState ({
+    //         games : this.filterGameList()
+    //     });
+    // }
     
     getNewGameList() {
         return Object.assign([], this.props.games);
@@ -82,11 +82,13 @@ export default class GamesTable extends React.Component<any, any> {
     }
     
     render () {
+        const filteredGames = this.filterGameList(); 
+        
         return (
             <div>
                 {this.props.showSearch ? this.renderSearchForm() : ''}
                 <div className="GameTable">
-                    {this.state.games.map((game:Game) => this.renderGame(game))}
+                    {filteredGames.map((game:Game) => this.renderGame(game))}
                 </div>
             </div>
         );
