@@ -20,12 +20,14 @@ export const FETCH_GAMES_SUCCEEDED: FETCH_GAMES_SUCCEEDED = 'FETCH_GAMES_SUCCEED
 export type FetchGamesSucceeded = {
     type: FETCH_GAMES_SUCCEEDED;
     games: object;
+    timestamp: number;
 };
 
-function fetchGamesSucceeded(games:object): FetchGamesSucceeded { 
+function fetchGamesSucceeded(games:object, timestamp: number): FetchGamesSucceeded { 
     return { 
         type: FETCH_GAMES_SUCCEEDED,
-        games: games
+        games: games,
+        timestamp: timestamp
     };
 }
 
@@ -38,6 +40,43 @@ export type FetchGamesFailed = {
 
 function fetchGamesFailed(): FetchGamesFailed { 
     return { type: FETCH_GAMES_FAILED };
+}
+
+// Update keyword
+export type UPDATE_KEYWORD = 'UPDATE_KEYWORD';
+export const UPDATE_KEYWORD: UPDATE_KEYWORD = 'UPDATE_KEYWORD';
+export type UpdateKeyword = {
+    type: UPDATE_KEYWORD;
+    keyword: string;
+};
+
+export function updateKeyword(keyword: string): UpdateKeyword { 
+    return { 
+        type: UPDATE_KEYWORD,
+        keyword: keyword
+    };
+}
+
+// reload data thunk
+export function getGamesData() {
+    return (dispatch: Redux.Dispatch<any>, getState: GlobalStateGetter) => {
+    fetch(config.gamesDataURL)
+        .then((response) => {
+            if (response.ok) {
+                return response;
+            } else {
+                throw new Error(response.statusText);
+            }
+        })
+        .then((response) => response.json())
+        .then((response) => {
+            // only store if timestamp is updated.
+            // NOTE: we could instead store the expires header to avoid fetching data
+            if (getState().games.timestamp < response.timestamp) {                            
+                dispatch(fetchGamesSucceeded(response.data, response.timestamp));
+            }
+        })
+    };
 }
 
 // Fetch Games Thunk
@@ -56,13 +95,9 @@ export function fetchGames() {
             })
             .then((response) => response.json())
             .then((response) => {
-                // lets store the info
-                console.log('fetchGames: store');
-                                
-                dispatch(fetchGamesSucceeded(response.data));
+                dispatch(fetchGamesSucceeded(response.data, response.timestamp));
             })
             .catch((error) => {
-                console.log('fetchGames: error');
                 dispatch(fetchGamesFailed())
             });
     };

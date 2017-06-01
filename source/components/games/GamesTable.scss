@@ -4,6 +4,7 @@
   padding: 5px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   
   &--game {
     margin: 10px;
@@ -13,29 +14,28 @@
     width: 230px;
     position: relative;
     display: inline-block;
-    align-items: stretch;
+    
     
     &--image {
       position: absolute;
       left: 10px;
       top: 10px;
+      width: 64px;
+      height: 64px;
     }
-    
+     
     &--info {
       margin-left: 75px;
       text-align: left;
       
       &--title {
         font-weight: bold;
-        text-decoration: none;
-        color: #222;
       }
       
       &--supports {
         list-style-type: none;
         margin: 0;
         padding: 0;
-            
         margin-top: 10px;
       
         &--item {
@@ -57,6 +57,13 @@
         }
       }
     }
+  }
+}
+
+.SearchForm {
+  &--input {
+    padding: 10px;
+    width: 70%;
   }
 }
 

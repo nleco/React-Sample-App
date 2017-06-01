@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import { store } from '../globals';
 
-import { App } from './App';
+import { AppContainer } from './AppContainer';
 
 import { GameListContainer } from './games/GameListContainer';
 import { GameViewContainer } from './games/GameViewContainer';
@@ -14,9 +14,9 @@ export class Root extends React.Component<{}, void> {
         return (
             <Provider store={store}>
                 <Router history={browserHistory}>
-                    <Route path='/' component={App}>
+                    <Route path='/' component={AppContainer}>
                         <IndexRoute component={GameListContainer} />
-                        <Route path='view/:gameID' component={GameViewContainer} />
+                        <Route path='game/:slug' component={GameViewContainer} />
                     </Route>
                 </Router>
             </Provider>
