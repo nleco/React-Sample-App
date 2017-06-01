@@ -10,7 +10,7 @@ export type FetchGamesStarted = {
     type: FETCH_GAMES_STARTED;
 };
 
-function fetchGamesStarted(): FetchGamesStarted { 
+export function fetchGamesStarted(): FetchGamesStarted { 
     return { type: FETCH_GAMES_STARTED };
 }
 
@@ -23,7 +23,7 @@ export type FetchGamesSucceeded = {
     timestamp: number;
 };
 
-function fetchGamesSucceeded(games:object, timestamp: number): FetchGamesSucceeded { 
+export function fetchGamesSucceeded(games:object, timestamp: number): FetchGamesSucceeded { 
     return { 
         type: FETCH_GAMES_SUCCEEDED,
         games: games,
@@ -38,7 +38,7 @@ export type FetchGamesFailed = {
     type: FETCH_GAMES_FAILED;
 };
 
-function fetchGamesFailed(): FetchGamesFailed { 
+export function fetchGamesFailed(): FetchGamesFailed { 
     return { type: FETCH_GAMES_FAILED };
 }
 
