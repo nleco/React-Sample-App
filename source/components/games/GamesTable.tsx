@@ -10,21 +10,11 @@ export default class GamesTable extends React.Component<any, any> {
     constructor(props:any) {
         super(props);
         
-        this.state = {
-            games : []
-        }
-        
         this.renderGame = this.renderGame.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.getNewGameList = this.getNewGameList.bind(this);
         this.filterGameList = this.filterGameList.bind(this);        
     }
-    
-    // componentDidMount() {
-    //     this.setState ({
-    //         games : this.filterGameList()
-    //     });
-    // }
     
     getNewGameList() {
         return Object.assign([], this.props.games);
