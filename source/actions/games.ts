@@ -60,7 +60,7 @@ export function updateKeyword(keyword: string): UpdateKeyword {
 // reload data thunk
 export function getGamesData() {
     return (dispatch: Redux.Dispatch<any>, getState: GlobalStateGetter) => {
-    fetch(config.gamesDataURL)
+    fetch(config.gamesDataURL, {'mode': 'no-cors'})
         .then((response) => {
             if (response.ok) {
                 return response;
